@@ -1,0 +1,28 @@
+<div class="container" id=addQuestion>
+
+
+  <mat-form-field class="example-full-width guildLine">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..." #inputValueQ ></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width guildLine">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."  ></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width guildLine">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."  ></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width guildLine">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."  ></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="getValue(inputValueQ.value)"  > Accent</button>
+</div>
+
+
+
+<app-papper-steper [ngStyle]="styleList" [countArray]="loopArray" [visible]="isVisible"></app-papper-steper>
