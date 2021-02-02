@@ -13,18 +13,13 @@ export class PapperSteperComponent implements OnInit {
 
   @Input() countArray: any[] | undefined;
   @Input() visible: boolean | undefined;
+  @Input() countAnswer: any[] | undefined;
 
   constructor(private _formBuilder: FormBuilder) {}
 
-  public displayEndNone={
-    display:"none"
-  };
-
-  public displayEndOk={
-    display:"block"
-  };
-
   ngOnInit(): void {
+    // @ts-ignore
+
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });

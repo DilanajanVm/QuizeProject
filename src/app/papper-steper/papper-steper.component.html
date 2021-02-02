@@ -1,30 +1,66 @@
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button>
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
-<h2>{{visible}}</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12"></div>
+    <button mat-raised-button color="primary" (click)="isLinear = !isLinear" id="toggle-linear">
+      {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+    </button>
+    <hr>
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
 
-  <mat-step *ngFor="let a of countArray" [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
+      <mat-step *ngFor="let a of countArray" [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+
+          <ng-template matStepLabel>Question</ng-template>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <mat-form-field class="questionField">
+                <mat-label>Input Your Question ?</mat-label>
+                <textarea matInput placeholder="What Is The Question ?" formControlName="firstCtrl" required></textarea>
+              </mat-form-field>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-7" style="display: flex;flex-direction: column">
+              <h1 id="answerTopic" style="margin-bottom: -3px">Answers</h1>
+              <p style="margin-bottom: -10px">Select the Right Answer</p>
+              <hr style="margin-bottom: 15px">
+              <div class="input-group mb-3" *ngFor="let b of countAnswer">
+                <div class="input-group-text">
+                  <input class="form-check-input" type="checkbox" value=""
+                         aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button mat-raised-button id="NextButton" color="primary" matStepperNext>Next</button>
+          </div>
+
+        </form>
+      </mat-step>
 
 
-  <mat-step>
-    <ng-template  matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <div class="row" id="doneLast">
+          <div class="col-6 contentBox" >
+          <h1>Done!</h1>
+          <p>Your Papper Succecfully Created!</p>
 
-</mat-horizontal-stepper>
+          <div style="display: flex;flex-direction: row;justify-content: center">
+            <button mat-raised-button matStepperPrevious
+                    style="background-color: #0e9d00;color: white;margin-right: 10px">Check Again
+            </button>
+            <button mat-raised-button style="margin-right: 10px" (click)="stepper.reset()" color="warn">Reset</button>
+            <button mat-raised-button style="margin-right: 10px" matStepperPrevious color="primary">Submit</button>
+          </div>
+        </div>
+        </div>
+      </mat-step>
+
+    </mat-horizontal-stepper>
+
+
+  </div>
+</div>

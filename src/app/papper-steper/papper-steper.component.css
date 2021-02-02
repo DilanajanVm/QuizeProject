@@ -1,0 +1,37 @@
+.questionField{
+  width: 100%;
+}
+.questionField textarea{
+  margin-top: 30px;
+  height: 280px;
+}
+
+.otherAnswer{
+  margin: 05px;
+  background-color: #c5c5c5;
+}
+
+.anwser{
+  height: 80px;
+}
+
+#NextButton{
+  width: 20%;
+}
+
+#doneLast{
+  justify-content: center;
+  margin-top: 80px;
+}
+
+
+.contentBox h1{
+  align-content: center;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Roboto Black";
+}
+.contentBox p{
+  align-content: center;
+  text-align: center;
+}

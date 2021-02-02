@@ -1,28 +1,32 @@
 <div class="container" id=addQuestion>
 
 
+
   <mat-form-field class="example-full-width guildLine">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..." #inputValueQ ></textarea>
+    <mat-label>Name Of Your Paper</mat-label>
+    <textarea matInput placeholder="Name of Your Paper..."  ></textarea>
   </mat-form-field>
 
   <mat-form-field class="example-full-width guildLine">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."  ></textarea>
+    <mat-label>Name Of the Teacher</mat-label>
+    <textarea matInput placeholder="Name Of the Teacher..."  ></textarea>
   </mat-form-field>
 
-  <mat-form-field class="example-full-width guildLine">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."  ></textarea>
-  </mat-form-field>
 
   <mat-form-field class="example-full-width guildLine">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."  ></textarea>
+    <mat-label>Number Of Question</mat-label>
+    <textarea matInput placeholder="Number Of Question..." #inputValueQ ></textarea>
   </mat-form-field>
-  <button mat-raised-button color="accent" (click)="getValue(inputValueQ.value)"  > Accent</button>
+
+
+  <mat-form-field class="example-full-width guildLine">
+    <mat-label>Number Of Answer</mat-label>
+    <textarea matInput placeholder="Number Of Answer..." #inputValueA ></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="getValue(inputValueQ.value,inputValueA.value)"> Create Pepper</button>
 </div>
 
 
 
-<app-papper-steper [ngStyle]="styleList" [countArray]="loopArray" [visible]="isVisible"></app-papper-steper>
+<app-papper-steper [ngStyle]="styleList" [countArray]="loopArray" [visible]="isVisible"  [countAnswer]="loopAnswer"></app-papper-steper>

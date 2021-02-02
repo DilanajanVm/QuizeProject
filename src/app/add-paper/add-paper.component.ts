@@ -13,10 +13,12 @@ export class AddPaperComponent implements OnInit {
   isOptional = false;
   public isVisible = false;
   count : number = 1;
+  answerCountAdd : number = 1;
 
   // @ts-ignore
   countOfQuiz =  this.countArry(this.count);
   public loopArray: any[] | undefined;
+  public loopAnswer: any[] | undefined;
   constructor(private _formBuilder: FormBuilder) {
 
   }
@@ -28,17 +30,27 @@ export class AddPaperComponent implements OnInit {
   };
 
 
-  getValue(value: string) {
-    this.count = +value;
-    console.log(this.count+'this is count');
+  getValue(value: string,answerCount: string) {
     this.styleList={
       display:"block"
     };
+
+    this.count = +value;
+    this.answerCountAdd = +answerCount;
+    console.log(this.count+'this is count'+this.answerCountAdd+'=========');
+
     this.loopArray = new Array();
+    this.loopAnswer = new Array();
+
     for (let a =0; a<this.count; a++){
       console.log(a+'This');
       this.loopArray.push(a);
     }
+    for (let b =0; b<this.answerCountAdd; b++){
+      console.log(b+'methana');
+      this.loopAnswer.push(b);
+    }
+
     this.isVisible=true;
 
   }
@@ -60,5 +72,8 @@ export class AddPaperComponent implements OnInit {
 
   }
 
-
+  //
+  // getValue(value: string, value2: string) {
+  //
+  // }
 }
